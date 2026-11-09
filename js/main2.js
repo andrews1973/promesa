@@ -23,14 +23,6 @@ const getUsuario = async (name) => {
     throw new Error(`El usuario con nombre ${name} no existe`);
 };
 
-// Pinta la información del usuario
-const pintarUsuario = (usuario) => {
-    infoUsuarios.innerHTML = `
-    <strong>Nombre:</strong> ${usuario.nombre},
-    <strong>Correo:</strong> ${usuario.correo}
-  `;
-};
-
 // Muestra la información del usuario
 const mostrarUsurario = async (usuarioBuscado) => {
     try {
@@ -39,4 +31,12 @@ const mostrarUsurario = async (usuarioBuscado) => {
     } catch (error) {
         infoUsuarios.textContent = error.message;
     }
+};
+
+// Pinta la información del usuario
+const pintarUsuario = (usuario) => {
+    infoUsuarios.innerHTML = `
+    <strong>Nombre:</strong> ${usuario.nombre},
+    <strong>Correo:</strong> ${usuario.correo}
+  `;
 };

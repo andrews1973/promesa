@@ -25,13 +25,6 @@ const getUsuario = (name) => {
     });
 };
 
-let pintarUsuario = (usuario) => {
-    infoUsuarios.innerHTML = `
-        <strong>Nombre:</strong> ${usuario.nombre},
-        <strong>Correo:</strong> ${usuario.correo}
-    `;
-};
-
 // Muestra la información del usuario
 const mostrarUsurario = (usuarioBuscado) => {
     getUsuario(usuarioBuscado)
@@ -41,4 +34,11 @@ const mostrarUsurario = (usuarioBuscado) => {
         .catch((error) => {
             infoUsuarios.textContent = error;
         });
+};
+
+let pintarUsuario = (usuario) => {
+    infoUsuarios.innerHTML = `
+        <strong>Nombre:</strong> ${usuario.nombre},
+        <strong>Correo:</strong> ${usuario.correo}
+    `;
 };
