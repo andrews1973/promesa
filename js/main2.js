@@ -8,23 +8,24 @@ const usuarioBuscado = "Andres";
 
 // Evento
 botonInfo.addEventListener("click", () => {
-  mostrarUsurario(usuarioBuscado);
+    infoUsuarios.textContent = "Buscando usuario...";
+    setTimeout(() => mostrarUsurario(usuarioBuscado), 2000);
 });
 
 // Busca un usuario y devuelve una promesa
 const getUsuario = async (name) => {
-  const usuarioEncontrado = usuario.find(({ nombre }) => nombre === name);
+    const usuarioEncontrado = usuario.find(({ nombre }) => nombre === name);
 
-  if (usuarioEncontrado) {
-    return usuarioEncontrado;
-  }
+    if (usuarioEncontrado) {
+        return usuarioEncontrado;
+    }
 
-  throw new Error(`El usuario con nombre ${name} no existe`);
+    throw new Error(`El usuario con nombre ${name} no existe`);
 };
 
 // Pinta la información del usuario
 const pintarUsuario = (usuario) => {
-  infoUsuarios.innerHTML = `
+    infoUsuarios.innerHTML = `
     <strong>Nombre:</strong> ${usuario.nombre},
     <strong>Correo:</strong> ${usuario.correo}
   `;
@@ -32,10 +33,10 @@ const pintarUsuario = (usuario) => {
 
 // Muestra la información del usuario
 const mostrarUsurario = async (usuarioBuscado) => {
-  try {
-    const usuario = await getUsuario(usuarioBuscado);
-    pintarUsuario(usuario);
-  } catch (error) {
-    infoUsuarios.textContent = error.message;
-  }
+    try {
+        const usuario = await getUsuario(usuarioBuscado);
+        pintarUsuario(usuario);
+    } catch (error) {
+        infoUsuarios.textContent = error.message;
+    }
 };
