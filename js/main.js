@@ -25,7 +25,7 @@ const getUsuario = (name) => {
     });
 };
 
-// Muestra la información del usuario
+// Muestra la información del usuario, invocamos la funcion
 const mostrarUsurario = (usuarioBuscado) => {
     getUsuario(usuarioBuscado)
         .then((usuario) => {
