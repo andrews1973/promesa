@@ -26,7 +26,7 @@ const getUsuario = async (name) => {
 // Muestra la información del usuario
 const mostrarUsurario = async (usuarioBuscado) => {
     try {
-        const usuario = await getUsuario(usuarioBuscado);
+        const usuario = await getUsuario(usuarioBuscado); // espera a resolverse la promesa
         pintarUsuario(usuario);
     } catch (error) {
         infoUsuarios.textContent = error.message;
@@ -34,7 +34,7 @@ const mostrarUsurario = async (usuarioBuscado) => {
 };
 
 // Pinta la información del usuario
-const pintarUsuario = (usuario) => {
+const pintarUsuario = (usuario) => { // no desdestructuro esta vez
     infoUsuarios.innerHTML = `
     <strong>Nombre:</strong> ${usuario.nombre},
     <strong>Correo:</strong> ${usuario.correo}
