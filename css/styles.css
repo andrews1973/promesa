@@ -22,3 +22,12 @@ header h1 {
     color: #263849;
     font-size: 1.8rem;
 }
+
+#botonInfo {
+  padding: 1rem;
+  color: white;
+  background: black;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
