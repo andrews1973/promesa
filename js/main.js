@@ -27,7 +27,7 @@ const getUsuario = (name) => {
 
 // Muestra la información del usuario, invocamos la funcion
 const mostrarUsurario = (usuarioBuscado) => {
-    getUsuario(usuarioBuscado)
+    getUsuario(usuarioBuscado) // esta funcion devuelve una promesa
         .then((usuario) => {
             pintarUsuario(usuario);
         })
@@ -36,9 +36,10 @@ const mostrarUsurario = (usuarioBuscado) => {
         });
 };
 
-let pintarUsuario = (usuario) => {
+let pintarUsuario = ({nombre, correo}) => {
+    infoUsuarios.innerHTML = ""
     infoUsuarios.innerHTML = `
-        <strong>Nombre:</strong> ${usuario.nombre},
-        <strong>Correo:</strong> ${usuario.correo}
+        <strong>Nombre:</strong> ${nombre},
+        <strong>Correo:</strong> ${correo}
     `;
 };
